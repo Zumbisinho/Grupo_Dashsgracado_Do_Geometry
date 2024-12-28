@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<header> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG | Seletor de Listas de Challenges</title>
+    <link rel="stylesheet" href="header.css">
+</header>
+
+<body> 
+    <header id="cabeçario">
+        <div id="esquerda">
+            <img src="Logo.png" alt="Logo" class="Logo">
+            <a class="Home" href="/home">Home</a>  
+            <button class="Sobre" onclick="alert('Faço isso depois 🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪')">Sobre</button>
+            
+        </div>
+        <div id="unlog">
+            <button class="Login" onclick="alert('Um dia eu faço sistema de login🤪🤪')">Login</button>
+            <img src="default.jpg" alt="Foto De Perfil" class="pfp">
+            
+        </div>
+        
+        
+        
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <h1 class="titulo_challange">Listas Disponíveis!</h1>
+    <div id="back"></div>
+    <div id="canva">
+        
+        <a class="contest_de_dezembro_24" href="/challanges/Rinha de servers/">Rinha de Servers </a>
+        <a class="top_challange">Top Challenges</a>
+    </div>
+    <script>
+        const botão = document.querySelector(".titulo_challange")
+
+        botão.addEventListener("click",() => {
+            confetti({
+                particleCount: 1800,
+                spread: 800,
+                origin: { y: 1 },
+                startVelocity: 100,
+                });
+        })
+
+    </script>
+</body>
+</html>
