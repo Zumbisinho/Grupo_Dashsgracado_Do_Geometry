@@ -84,7 +84,7 @@
                         document.getElementById(`titulo_template${i}`).innerText = levels[i]['name']
                         document.getElementById(`nome_template${i}`).innerText = levels[i]['creator']
                         document.getElementById(`id_template${i}`).innerText = levels[i]['id']
-                        document.getElementById(`verify_template${i}`).innerText = levels[i]['verifiedBy']
+                        document.getElementById(`verify_template${i}`).innerText = `Verificado por: ${levels[i]['verifiedBy']}`
                         document.getElementById(`titulo_template${i}`).innerText = levels[i]['name']
                         const videoId = levels[i]['url'].match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)?.[1];
                         document.getElementById(`video_template${i}`).src = `https://www.youtube.com/embed/${videoId}`
@@ -95,7 +95,7 @@
                     document.getElementById(`titulo_template`).innerText = levels[0]['name']
                     document.getElementById(`nome_template`).innerText = levels[0]['creator']
                     document.getElementById(`id_template`).innerText = levels[0]['id']
-                    document.getElementById(`verify_template`).innerText = levels[0]['verifiedBy']
+                    document.getElementById(`verify_template`).innerText = `Verificado por: ${levels[0]['verifiedBy']}`
                     document.getElementById(`titulo_template`).innerText = levels[0]['name']   
                     const videoId = levels[0]['url'].match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)?.[1];
                     document.getElementById(`video_template`).src = `https://www.youtube.com/embed/${videoId}`
