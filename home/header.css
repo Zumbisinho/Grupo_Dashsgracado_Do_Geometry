@@ -18,11 +18,23 @@ body{
 #cabeçario {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     border-bottom: 4px solid #767676;
-
-
 }
+
+
+@media (max-width: 768px) {
+  #cabeçario {
+      transform: scale(0.7); /* Reduz a escala do cabeçalho */
+  }
+}
+
+@media (max-width: 480px) {
+  #cabeçario {
+      transform: scale(0.5); /* Reduz ainda mais a escala */
+  }
+}
+
 
 
 #unlog {
