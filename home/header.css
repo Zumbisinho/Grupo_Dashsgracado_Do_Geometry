@@ -3,8 +3,7 @@
     display: flex;
     justify-content:flex-start;
     align-items:center;
-    padding: 10px 20px;
-    gap: 20px;
+    gap: 10px;
 
     
     
@@ -13,27 +12,17 @@
 
 body{
     margin: 0px;
+    background-color: #ffffff;
 }
 
 #cabeçario {
     display: flex;
     justify-content: space-between;
-    align-items: start;
     border-bottom: 4px solid #767676;
+    padding: 5px 10px;
 }
 
 
-@media (max-width: 768px) {
-  #cabeçario {
-      transform: scale(0.7); /* Reduz a escala do cabeçalho */
-  }
-}
-
-@media (max-width: 480px) {
-  #cabeçario {
-      transform: scale(0.5); /* Reduz ainda mais a escala */
-  }
-}
 
 
 
@@ -41,8 +30,7 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px 20px;
-    gap: 30px;
+    gap: 10px;
     
 }
 
@@ -67,8 +55,11 @@ body{
     justify-content: flex-end;
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
 }
+
+
+
 #back{
     position: relative;
     width:auto;
@@ -165,12 +156,22 @@ body{
     font-family: Tungsten;
     font-size: 40px;
     text-align: center;
+    white-space: nowrap;
     padding: 2px 20px;
     border-radius: 50px; /* Borda arredondada */
     position: relative;
     z-index: 1; /* Certifica-se que o botão fique acima das bordas */
     text-decoration: none;
     transition: background-color 0.2s ease-out,text-shadow 0.2s ease-in,transform 0.1s ease-in, color 0.2s ease-out;
+}
+
+
+@media (max-width: 500px) {
+  .contest_de_dezembro_24,.top_challange {
+    font-size: 30px;
+    padding: 2px 15px;
+  }
+
 }
 .contest_de_dezembro_24::before,.top_challange::before {
     content: "";
@@ -223,6 +224,7 @@ body{
     border-radius: 50px;
     padding: 2px 20px;
     background-color: #ffffff;
+    white-space: nowrap;
 
 
 
