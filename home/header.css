@@ -63,7 +63,7 @@ body{
 #back{
     position: relative;
     width:auto;
-    height:calc(100vh - 89px);
+    height:calc(100vh - 79px);
     z-index: -20;
     --s: 25vmin;
     --p: calc(var(--s) / 2);
