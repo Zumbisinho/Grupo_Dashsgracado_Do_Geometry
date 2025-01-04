@@ -20,6 +20,8 @@ body{
   justify-content: space-between;
   border-bottom: 4px solid #767676;
   padding: 5px 10px;
+  position: relative;
+  z-index: 2;
 }
 
 
