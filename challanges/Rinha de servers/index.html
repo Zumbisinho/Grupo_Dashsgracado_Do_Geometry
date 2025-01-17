@@ -76,7 +76,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const levels = data.levels; // Acessa a lista de níveis
-                    for (var i = 1; i <= 14; ++i) { //Coloca os números certos
+                    for (var i = 1; i <= 5; ++i) { //Coloca os números certos
                         document.getElementById(`pos_template${i}`).innerText = `${i+1}º`;
                         document.getElementById(`titulo_template${i}`).innerText = levels[i]['name']
                         document.getElementById(`nome_template${i}`).innerText = levels[i]['creator']
@@ -105,7 +105,7 @@
         }
 
         function criarlista() {
-            for (var i = 0; i < 14; ++i){
+            for (var i = 0; i < 5; ++i){
                 duplicate()
             }
             Modificar_Lista()
