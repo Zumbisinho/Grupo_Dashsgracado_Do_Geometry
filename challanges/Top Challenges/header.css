@@ -52,13 +52,13 @@ body{
 }
 #canva{
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     justify-content: flex-end;
     display: flex;
     align-items: center;
-    gap: 100px;
+    flex-direction: column;
 }
 
 
@@ -197,7 +197,6 @@ iframe{
   display: flex;
   flex-direction: column;
   align-items: center; /* Alinha no eixo Y */
-  transform: translateY(3800px);
   
 }
 
@@ -244,7 +243,15 @@ iframe{
     transform: scale(1.1);
 }
 
-
+#legacy {
+  padding: 2px 50px;
+  gap: 50px;
+  font-family: Tungsten;
+  font-size: 50px;
+  border-radius: 50px;
+  background-color: #aaaaaa;
+  
+}
 
 
 
