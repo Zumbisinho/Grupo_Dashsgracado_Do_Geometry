@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG | Seletor de Listas de Challenges</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body onload="criarlista()"> 
+    <header id="cabeçario">
+        <div id="esquerda">
+            <img src="gdg.gif" alt="Logo" class="Logo">
+            <a class="Home" href="../../home/">Home</a>  
+            <button class="Sobre" onclick="alert('Faço isso depois 🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪')">Sobre</button>
+            
+        </div>
+        <div id="unlog">
+            <button class="Login" onclick="alert('Um dia eu faço sistema de login🤪🤪')">Login</button>
+            <img src="default.jpg" alt="Foto De Perfil" class="pfp">
+            
+        </div>
+        
+        
+        
+    </header>
+    <div id="back"></div>
+    <div id="canva">
+        <div id="Lista">
+            <div id="Template">
+                <div class="bg">
+                    <iframe id="video_template" width="500" height="250" src="https://www.youtube.com/embed/ZRqRa89Eovs" title="Emin Nilsen &amp; Kamran747 - BANDIDO FUNK | Brazilian Phonk | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div id="details">
+                        <p id="titulo_template">Toma Bala</p>
+                        <p id="nome_template">Zumbisinho</p>
+                        <p id="id_template">113403349</p>
+                        <p id="verify_template">Verificado por: Pai do Zvitor e Gk</p>
+                        <p id="pos_template">1º</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 id="legacy">Legacy List!</h1>
+        <div id="Lista_legacy">
+            <div id="Template_legacy">
+                <div class="bg_legacy">
+                    <iframe id="video_template_legacy" width="500" height="250" src="https://www.youtube.com/embed/ZRqRa89Eovs" title="Emin Nilsen &amp; Kamran747 - BANDIDO FUNK | Brazilian Phonk | NCS - Copyright Free Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div id="details_legacy">
+                        <p id="titulo_template_legacy">Toma Bala</p>
+                        <p id="nome_template_legacy">Zumbisinho</p>
+                        <p id="id_template_legacy">113403349</p>
+                        <p id="verify_template_legacy">Verificado por: Pai do Zvitor e Gk</p>
+                        <p id="pos_template_legacy">1º</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        var i = 0;
+        var original = document.getElementById('Template');
+
+        function duplicate() {
+            var original = document.getElementById('Template'); // O elemento original que será clonado
+            var clone = original.cloneNode(true); // "deep" clone
+            clone.id = "Template" + ++i; // Define um ID único para o clone
+
+            // Atualiza os IDs e classes dos filhos do clone
+            var elements = clone.querySelectorAll('[id], [class]'); // Seleciona elementos com ID ou classe
+            elements.forEach((element, index) => {
+                // Atualiza o ID, se existir
+                if (element.id) {
+                    element.id = `${element.id}${i}`;
+                }
+                // Atualiza a classe, se existir
+                if (element.className) {
+                    element.className += `${i}`;
+                }
+            })
+
+            // Adiciona o clone ao DOM
+            original.parentNode.appendChild(clone);
+
+           
+        }
+        function duplicate_legacy(){
+            var original_legacy = document.getElementById('Template_legacy'); // O elemento original que será clonado
+            var clone_legacy = original_legacy.cloneNode(true); // "deep" clone
+            clone_legacy.id = "Template_legacy" + ++i; // Define um ID único para o clone
+
+            // Atualiza os IDs e classes dos filhos do clone
+            var elements_legacy = clone_legacy.querySelectorAll('[id], [class]'); // Seleciona elementos com ID ou classe
+            elements_legacy.forEach((element, index) => {
+                // Atualiza o ID, se existir
+                if (element.id) {
+                    element.id = `${element.id}${i}`;
+                }
+                // Atualiza a classe, se existir
+                if (element.className) {
+                    element.className += `${i}`;
+                }
+            })
+
+            // Adiciona o clone ao DOM
+            original_legacy.parentNode.appendChild(clone_legacy);
+        }
+        function Modificar_Lista() { 
+
+        
+            fetch('list.json')
+                .then(response => response.json())
+                .then(data => {
+                    const levels = data.levels;
+                    var counter = Object.keys(data.levels).length
+                    console.log(counter, levels[20]) // Acessa a lista de níveis
+                    if (counter > 15) {
+                        for (var i = 1; i <= 14; ++i) { //Coloca os números certos
+                            document.getElementById(`pos_template${i}`).innerText = `${i+1}º`;
+                            document.getElementById(`titulo_template${i}`).innerText = levels[i]['name']
+                            document.getElementById(`nome_template${i}`).innerText = levels[i]['creator']
+                            document.getElementById(`id_template${i}`).innerText = levels[i]['id']
+                            document.getElementById(`verify_template${i}`).innerText = `Verificado por: ${levels[i]['verifiedBy']}`
+                            document.getElementById(`titulo_template${i}`).innerText = levels[i]['name']
+                            const videoId = levels[i]['url'].match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)?.[1];
+                            document.getElementById(`video_template${i}`).src = `https://www.youtube.com/embed/${videoId}`
+
+
+                            
+                        }
+                        document.getElementById(`titulo_template`).innerText = levels[0]['name']
+                        document.getElementById(`nome_template`).innerText = levels[0]['creator']
+                        document.getElementById(`id_template`).innerText = levels[0]['id']
+                        document.getElementById(`verify_template`).innerText = `Verificado por: ${levels[0]['verifiedBy']}`
+                        document.getElementById(`titulo_template`).innerText = levels[0]['name']   
+                        const videoId = levels[0]['url'].match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)?.[1];
+                        document.getElementById(`video_template`).src = `https://www.youtube.com/embed/${videoId}`
+
+                        for (var i = 16; i <= (counter -1); ++i) { //Coloca os números certos
+                            console.log(counter)
+                            document.getElementById(`pos_template_legacy${i-1}`).innerText = `${i+1}º`;
+                            document.getElementById(`titulo_template_legacy${i-1}`).innerText = levels[i]['name']
+                            document.getElementById(`nome_template_legacy${i-1}`).innerText = levels[i]['creator']
+                            document.getElementById(`id_template_legacy${i-1}`).innerText = levels[i]['id']
+                            document.getElementById(`verify_template_legacy${i-1}`).innerText = `Verificado por: ${levels[i]['verifiedBy']}`
+                            document.getElementById(`titulo_template_legacy${i-1}`).innerText = levels[i]['name']
+                            const videoId_legacy = levels[i]['url'].match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)?.[1];
+                            document.getElementById(`video_template_legacy${i-1}`).src = `https://www.youtube.com/embed/${videoId_legacy}`
+
+
+                            
+                        }
+                        document.getElementById(`titulo_template_legacy`).innerText = levels[15]['name']
+                        document.getElementById(`nome_template_legacy`).innerText = levels[15]['creator']
+                        document.getElementById(`id_template_legacy`).innerText = levels[15]['id']
+                        document.getElementById(`verify_template_legacy`).innerText = `Verificado por: ${levels[15]['verifiedBy']}`
+                        document.getElementById(`titulo_template_legacy`).innerText = levels[15]['name']   
+                        const videoId_legacy = levels[15]['url'].match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)?.[1];
+                        document.getElementById(`video_template_legacy`).src = `https://www.youtube.com/embed/${videoId_legacy}`
+                        document.getElementById(`pos_template_legacy`).innerText = `16º`;
+                    }
+            
+                })
+                .catch(error => console.error('Erro ao carregar o JSON:', error));
+            
+
+
+        }
+
+        function criarlista() {
+            fetch('list.json')
+                .then(response => response.json())
+                .then(data => {
+                    var count = Object.keys(data.levels).length
+                    console.log(count)
+                    if (count > 15) { 
+                        for (var i = 1; i < 15; ++i){
+                            duplicate()
+                        }
+                        for (var i =1; i< (count - 15);++i) {
+                            duplicate_legacy()
+                        }
+                    }
+                    else {
+                        for (var i = 0; i < (count -1);++i) {
+                            duplicate()
+                            document.getElementById("Template_legacy").style.display = 'None'
+                            document.getElementById("legacy").style.display = 'None'
+
+                        }
+
+                    }
+                    document.getElementById('back').style.height = document.documentElement.scrollHeight + 'px';
+                })
+                .catch(error => console.error('Erro ao carregar o JSON:', error));
+            
+            Modificar_Lista()
+            
+            confetti({
+                particleCount: 1800,
+                spread: 800,
+                origin: { y: 0.7 },
+                startVelocity: 50
+                });
+
+        }
+
+    </script>
+</body>
+</html>
