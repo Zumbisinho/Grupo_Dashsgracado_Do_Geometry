@@ -1,0 +1,358 @@
+@font-face { font-family: Tungsten; src: url(Tungsten-Bold.ttf); }
+#esquerda {
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap: 10px;
+
+    
+    
+    
+}
+
+body{
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+#cabeçario {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid #767676;
+    padding: 5px 10px;
+}
+
+
+
+
+
+#unlog {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+
+.Sobre,.Home,.Login{
+    text-shadow: 5px 5px #ccc;
+    padding: 0px 10px;
+    border: none;
+    font-size: 34px;
+    font-family: Tungsten;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color 0.2s ease-out,text-shadow 0.2s ease-in,transform 0.1s ease-in;
+    
+}
+
+.botoes{
+
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-top: 20px;
+}
+#canva {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+#back{
+    position: relative;
+    width:auto;
+    height:calc(100vh - 79px);
+    z-index: -20;
+    --s: 25vmin;
+    --p: calc(var(--s) / 2);
+    --c1: rgb(0, 0, 98);
+    --c2: rgb(10, 46, 82);
+    --c3: rgb(86, 86, 0);
+    --bg: var(--c3);
+    --d: 4000ms;
+    --e: cubic-bezier(0.76, 0, 0.24, 1);
+    
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+    background-size: var(--s) var(--s);
+    background-position: 
+      calc(var(--p) *  1) calc(var(--p) *  0), 
+      calc(var(--p) * -1) calc(var(--p) *  1), 
+      calc(var(--p) *  1) calc(var(--p) * -1), 
+      calc(var(--p) * -1) calc(var(--p) *  0);
+    animation: 
+      color var(--d) var(--e) infinite,
+      position var(--d) var(--e) infinite;
+  }
+  
+  @keyframes color {
+    0%, 25% {
+      --bg: var(--c3);
+    }
+    26%, 50% {
+      --bg: var(--c1);
+    }
+    51%, 75% {
+      --bg: var(--c3);
+    }
+    76%, 100% {
+      --bg: var(--c2);
+    }
+  }
+  
+  @keyframes position {
+    0% {
+      background-position: 
+        calc(var(--p) *  1) calc(var(--p) *  0), 
+        calc(var(--p) * -1) calc(var(--p) *  1), 
+        calc(var(--p) *  1) calc(var(--p) * -1), 
+        calc(var(--p) * -1) calc(var(--p) *  0);
+    }
+    25% {
+      background-position: 
+        calc(var(--p) *  1) calc(var(--p) *  4), 
+        calc(var(--p) * -1) calc(var(--p) *  5), 
+        calc(var(--p) *  1) calc(var(--p) *  3), 
+        calc(var(--p) * -1) calc(var(--p) *  4);
+    }
+    50% {
+      background-position: 
+        calc(var(--p) *  3) calc(var(--p) * 8), 
+        calc(var(--p) * -3) calc(var(--p) * 9), 
+        calc(var(--p) *  2) calc(var(--p) * 7), 
+        calc(var(--p) * -2) calc(var(--p) * 8);
+    }
+    75% {
+      background-position: 
+        calc(var(--p) *  3) calc(var(--p) * 12), 
+        calc(var(--p) * -3) calc(var(--p) * 13), 
+        calc(var(--p) *  2) calc(var(--p) * 11), 
+        calc(var(--p) * -2) calc(var(--p) * 12);
+    }
+    100% {    
+      background-position: 
+        calc(var(--p) *  5) calc(var(--p) * 16), 
+        calc(var(--p) * -5) calc(var(--p) * 17), 
+        calc(var(--p) *  5) calc(var(--p) * 15), 
+        calc(var(--p) * -5) calc(var(--p) * 16);
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    #back {
+      animation: none;
+    }
+  }
+
+.contest_de_dezembro_24,.top_challange {
+    background: #00aaff; /* Cor de fundo principal */
+    color: #000; /* Cor do texto */
+    font-family: Tungsten;
+    font-size: 40px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 2px 20px;
+    border-radius: 50px; /* Borda arredondada */
+    position: relative;
+    z-index: 1; /* Certifica-se que o botão fique acima das bordas */
+    text-decoration: none;
+    transition: background-color 0.2s ease-out,text-shadow 0.2s ease-in,transform 0.1s ease-in, color 0.2s ease-out;
+}
+
+
+@media (max-width: 500px) {
+  .contest_de_dezembro_24,.top_challange {
+    font-size: 30px;
+    padding: 2px 15px;
+  }
+
+}
+.contest_de_dezembro_24::before,.top_challange::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50px; /* Mesma borda arredondada */
+    background: #0088cc; /* Cor sólida */
+    z-index: -1; /* Coloca atrás do botão */
+}
+.contest_de_dezembro_24::after,.top_challange::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50px; /* Mesma borda arredondada */
+    background: rgba(0, 170, 255, 0.5); /* Cor semi-transparente */
+    z-index: -2; /* Fica atrás da borda sólida */
+}
+
+.contest_de_dezembro_24:hover,.top_challange:hover{
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.contest_de_dezembro_24:hover::before,.top_challange:hover::before{
+    background: rgb(105, 205, 255);
+}
+.contest_de_dezembro_24:hover::after,.top_challange:hover::after{
+    background: rgba(122, 211, 255, 0.5);
+}
+
+.titulo_challange{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding: 2px 20px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-family: Tungsten;
+    font-size: 50px;
+    animation: slide 3s infinite ;
+    transition: font-size 0.5s ease-out, transform 1s ease-in;
+    border-radius: 50px;
+    background-color: #ffffff;
+    white-space: nowrap;
+
+
+
+}
+
+.titulo_challange::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50px; /* Mesma borda arredondada */
+  background: rgba(255, 255, 255, 0.5); /* Cor semi-transparente */
+  z-index: -2; /* Fica atrás da borda sólida */
+}
+
+.titulo_challange::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50px; /* Mesma borda arredondada */
+  background: #ffffff; /* Cor sólida */
+  z-index: -1; /* Coloca atrás do botão */
+}
+
+.titulo_challange:hover{
+    font-size: 55px;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translate(-50%, 0px);
+    }
+    50%{
+        transform: translate(-50%, 20px);
+    }
+    100%{
+        transform: translate(-50%, 0px)
+    }
+
+}
+
+
+
+.Ferramentas:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    text-shadow: 0px 0px #ea000000;
+    transform: scale(1.1);
+    
+}
+
+
+.Contato:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    text-shadow: 0px 0px #ea000000;
+    transform: scale(1.1);
+}
+
+
+.Sobre:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    text-shadow: 0px 0px #ea000000;
+    transform: scale(1.1);
+}
+
+.Home:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    text-shadow: 0px 0px #ea000000;
+    transform: scale(1.1);
+}
+
+.Login:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+    text-shadow: 0px 0px #ea000000;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+.separação {
+    border: 2px;
+    border-top: 2px solid #ffffff;
+    margin: 0;
+    display: flex;
+    
+}
+
+.Logo {
+    width: 65px;
+    background-color:black;
+    height: auto;
+    border-radius: 50px;
+    box-shadow: 5px 5px #ccc;
+    transition: transform 0.1s ease-in;
+}
+.Logo:hover {
+    transform: scale(1.1);
+    
+
+}
+
+.pfp {
+    width: 50px;
+    height: auto;
+    border-style: groove;
+    border: 5px solid black;
+    border-radius: 50%;
+    box-shadow: 5px 5px #ccc;
+}

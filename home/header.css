@@ -20,6 +20,7 @@ body{
     justify-content: space-between;
     border-bottom: 4px solid #767676;
     padding: 5px 10px;
+    font-size: 30px;
 }
 
 
@@ -39,7 +40,6 @@ body{
     text-shadow: 5px 5px #ccc;
     padding: 0px 10px;
     border: none;
-    font-size: 34px;
     font-family: Tungsten;
     color: black;
     text-decoration: none;
@@ -51,12 +51,17 @@ body{
 
 .botoes{
 
-    justify-content: flex-start;
+
     display: flex;
     align-items: center;
     gap: 50px;
     padding-top: 20px;
+    font-size: 40px;
+    flex-wrap:wrap;
+    justify-content: center;
+
 }
+
 #canva {
     position: absolute;
     top: 50%;
@@ -163,7 +168,6 @@ body{
     background: #00aaff; /* Cor de fundo principal */
     color: #000; /* Cor do texto */
     font-family: Tungsten;
-    font-size: 40px;
     text-align: center;
     white-space: nowrap;
     padding: 2px 20px;
@@ -175,13 +179,40 @@ body{
 }
 
 
-@media (max-width: 500px) {
-  .contest_de_dezembro_24,.top_challange {
+
+@media (max-width: 1000px) {
+  .botoes {
+    gap: 25px;
     font-size: 30px;
-    padding: 2px 15px;
+    
+    
+
   }
 
 }
+@media (max-width:420px) {
+  #cabeçario {
+    font-size: 25px;
+    
+  }
+  .Logo{
+    max-width: 35px;
+    height: auto;
+  }
+  .pfp {
+    max-width: 35px;
+    border-width: 3px !important;
+  }
+  .titulo_challange {
+    font-size: 30px !important;
+  }
+  .botoes {
+    font-size: 20px;
+  }
+}
+
+
+
 .contest_de_dezembro_24::before,.top_challange::before {
     content: "";
     position: absolute;
@@ -335,7 +366,7 @@ body{
 }
 
 .Logo {
-    width: 65px;
+  width: 65px;
     background-color:black;
     height: auto;
     border-radius: 50px;
