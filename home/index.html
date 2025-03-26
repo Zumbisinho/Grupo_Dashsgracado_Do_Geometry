@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GDG | Seletor de Listas de Challenges</title>
-    <link rel="stylesheet" href="header.css">
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../src/favicon.png" type="image/png">
 </head>
 
 <body> 
-    <header id="cabeçario">
+    <nav id="cabeçario">
         <div id="esquerda">
-            <img src="gdg.gif" alt="Logo" class="Logo">
+            <img src="../src/gdg.gif" alt="Logo" class="Logo">
             <a class="Home" href="../../home/">Home</a>  
             <a class="Sobre" onclick="alert('Faço isso depois 🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪🤪')">Sobre</a>
             
         </div>
         <div id="unlog">
             <a class="Login" onclick="alert('Um dia eu faço sistema de login🤪🤪')">Login</a>
-            <img src="default.jpg" alt="Foto De Perfil" class="pfp">
+            <img src="../src/default.jpg" alt="Foto De Perfil" class="pfp">
             
         </div>
         
         
         
-    </header>
+    </nav>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
     <div id="back"></div>
     <div id="canva">
         <h1 class="titulo_challange">Listas Disponíveis!</h1>
-        <div class="botoes">
+        <li class="botoes">
     
             <a class="contest_de_dezembro_24" href="../challanges/Rinha de servers/">Rinha de Servers </a>
             <a class="top_challange" href="../challanges/Top Challenges/">Top Challenges</a>
-        </div>
+        </li>
     </div>
     <script>
         const botão = document.querySelector(".titulo_challange")
